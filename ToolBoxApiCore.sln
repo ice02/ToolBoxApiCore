@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBoxApiCore", "ToolBoxApiCore\ToolBoxApiCore.csproj", "{A0A8AC51-0ACA-4787-952B-804473705F79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApi.Apps.V1", "ToolboxApi.Apps.V1\ToolboxApi.Apps.V1.csproj", "{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApi.Apps.V0", "ToolboxApi.Apps.V0\ToolboxApi.Apps.V0.csproj", "{80AD3F25-4811-4228-86B5-599996623AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A0A8AC51-0ACA-4787-952B-804473705F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0A8AC51-0ACA-4787-952B-804473705F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0A8AC51-0ACA-4787-952B-804473705F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AD3F25-4811-4228-86B5-599996623AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AD3F25-4811-4228-86B5-599996623AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AD3F25-4811-4228-86B5-599996623AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AD3F25-4811-4228-86B5-599996623AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

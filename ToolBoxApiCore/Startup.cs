@@ -11,13 +11,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using ExtCore.WebApplication.Extensions;
+
 namespace ToolBoxApiCore
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private string extensionsPath;
+
+        public Startup(IHostingEnvironment hostingEnvironment, IConfiguration configuration)
         {
             Configuration = configuration;
+
+            this.extensionsPath = hostingEnvironment.ContentRootPath + configuration["Extensions:Path"];
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +32,8 @@ namespace ToolBoxApiCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddExtCore(this.extensionsPath);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +50,8 @@ namespace ToolBoxApiCore
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            //app.UseMvc();
+            app.UseExtCore();
         }
     }
 }
