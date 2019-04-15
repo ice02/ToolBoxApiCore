@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2018
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBoxApiCore", "ToolBoxApiCore\ToolBoxApiCore.csproj", "{A0A8AC51-0ACA-4787-952B-804473705F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolBoxApiCore", "ToolBoxApiCore\ToolBoxApiCore.csproj", "{A0A8AC51-0ACA-4787-952B-804473705F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApi.Apps.V1", "ToolboxApi.Apps.V1\ToolboxApi.Apps.V1.csproj", "{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolboxApi.Apps.V1", "ToolboxApi.Apps.V1\ToolboxApi.Apps.V1.csproj", "{EF5FABB5-0FBA-451C-AF2B-24F34FDBC2E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApi.Apps.V0", "ToolboxApi.Apps.V0\ToolboxApi.Apps.V0.csproj", "{80AD3F25-4811-4228-86B5-599996623AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolboxApi.Apps.V0", "ToolboxApi.Apps.V0\ToolboxApi.Apps.V0.csproj", "{80AD3F25-4811-4228-86B5-599996623AAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

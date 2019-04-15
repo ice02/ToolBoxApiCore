@@ -11,21 +11,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-using ExtCore.WebApplication.Extensions;
-
-namespace ToolBoxApiCore
+namespace ToolboxApi
 {
     public class Startup
     {
-        private string extensionsPath;
-
-        public Startup(IHostingEnvironment hostingEnvironment, IConfiguration configuration, ILoggerFactory loggerFactory)
+        public Startup(IConfiguration configuration)
         {
-            loggerFactory.AddConsole();
-
             Configuration = configuration;
-
-            this.extensionsPath = hostingEnvironment.ContentRootPath + configuration["Extensions:Path"];
         }
 
         public IConfiguration Configuration { get; }
@@ -33,8 +25,6 @@ namespace ToolBoxApiCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddExtCore(this.extensionsPath, true);
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerDocument();
@@ -43,8 +33,6 @@ namespace ToolBoxApiCore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseExtCore();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -55,18 +43,8 @@ namespace ToolBoxApiCore
                 app.UseHsts();
             }
 
-            
-
             app.UseHttpsRedirection();
             app.UseMvc();
-            
-
-            // Middleware  
-            if (env.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUi3();
-            }
         }
     }
 }

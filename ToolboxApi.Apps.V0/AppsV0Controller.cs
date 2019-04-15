@@ -6,7 +6,7 @@ using ToolboxApi.Apps.V0.Model;
 namespace ToolboxApi.Apps.V0
 {
     [Route("api/apps/v0/")]
-    public class AppsV1Controller : Controller
+    public class AppsV0Controller : Controller
     {
         [HttpGet]
         public async System.Threading.Tasks.Task<IEnumerable<Item>> GetAsync()

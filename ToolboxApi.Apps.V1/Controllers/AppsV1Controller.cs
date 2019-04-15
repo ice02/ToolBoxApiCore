@@ -3,11 +3,12 @@ using Simple.OData.Client;
 using System.Collections.Generic;
 using ToolboxApi.Apps.V1.Model;
 
-namespace ToolboxApi.Apps.V1
+namespace ToolboxApi.Apps.V1.Controllers
 {
 
     [Route("api/apps/v1/items")]
-    public class AppsV1Controller : Controller
+    [ApiController]
+    public class AppsV1Controller : ControllerBase
     {
         // https://github.com/simple-odata-client/Simple.OData.Client/wiki/Retrieving-data
 

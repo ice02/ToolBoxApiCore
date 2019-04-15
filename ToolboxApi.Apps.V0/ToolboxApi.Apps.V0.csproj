@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\ToolBoxApiCore\bin\Debug\Extensions</OutputPath>
+    <OutputPath>..\ToolBoxApiCore\Extensions</OutputPath>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
