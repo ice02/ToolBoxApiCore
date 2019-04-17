@@ -5,11 +5,14 @@ using ToolboxApi.Apps.V0.Model;
 
 namespace ToolboxApi.Apps.V0
 {
+    [ApiVersion("0.1")]
+    [Produces("application/json")]
+    [ApiController]
     [Route("api/apps/v0/")]
     public class AppsV0Controller : Controller
     {
         [HttpGet]
-        public async System.Threading.Tasks.Task<IEnumerable<Item>> GetAsync()
+        public IEnumerable<Item> GetAsync()
         {
             //var container = new Container(new Uri("http://localhost:58200/odata/"));
 

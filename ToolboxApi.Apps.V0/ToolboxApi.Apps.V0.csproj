@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.2" />
     <PackageReference Include="Microsoft.OData.Client" Version="7.5.4" />
   </ItemGroup>
 

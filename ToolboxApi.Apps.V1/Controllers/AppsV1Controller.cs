@@ -5,8 +5,10 @@ using ToolboxApi.Apps.V1.Model;
 
 namespace ToolboxApi.Apps.V1.Controllers
 {
-
-    [Route("api/apps/v1/items")]
+    //[ApiVersion("1.0", Deprecated = true)]
+    [ApiVersion("1.0")]
+    [Produces("application/json")]
+    [Route("api/apps/v1")]
     [ApiController]
     public class AppsV1Controller : ControllerBase
     {
