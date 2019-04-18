@@ -2,19 +2,19 @@
 using Simple.OData.Client;
 using System.Collections.Generic;
 using ToolboxApi.Apps.V1.Model;
+using ToolboxApi.Common;
 
 namespace ToolboxApi.Apps.V1.Controllers
 {
     //[ApiVersion("1.0", Deprecated = true)]
     [ApiVersion("1.0")]
     [Produces("application/json")]
-    [Route("api/apps/v1")]
     [ApiController]
-    public class AppsV1Controller : ControllerBase
+    public class AppsController : ApiControllerBase//ControllerBase
     {
         // https://github.com/simple-odata-client/Simple.OData.Client/wiki/Retrieving-data
 
-        readonly ODataClient client = new ODataClient("http://packages.nuget.org/v1/FeedService.svc/");
+        //readonly ODataClient client = new ODataClient("http://packages.nuget.org/v1/FeedService.svc/");
 
         [HttpGet]
         public IEnumerable<Item> Get()

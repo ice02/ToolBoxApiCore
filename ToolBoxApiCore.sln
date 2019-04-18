@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolboxApi.Apps.V1", "Toolb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolboxApi.Apps.V0", "ToolboxApi.Apps.V0\ToolboxApi.Apps.V0.csproj", "{80AD3F25-4811-4228-86B5-599996623AAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApi.Common", "ToolboxApi.Common\ToolboxApi.Common.csproj", "{50F57B78-624E-4F2B-8C0F-0D515E557F49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{80AD3F25-4811-4228-86B5-599996623AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80AD3F25-4811-4228-86B5-599996623AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80AD3F25-4811-4228-86B5-599996623AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F57B78-624E-4F2B-8C0F-0D515E557F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F57B78-624E-4F2B-8C0F-0D515E557F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F57B78-624E-4F2B-8C0F-0D515E557F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F57B78-624E-4F2B-8C0F-0D515E557F49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

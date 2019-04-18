@@ -2,14 +2,14 @@
 using System;
 using System.Collections.Generic;
 using ToolboxApi.Apps.V0.Model;
+using ToolboxApi.Common;
 
 namespace ToolboxApi.Apps.V0
 {
     [ApiVersion("0.1")]
     [Produces("application/json")]
     [ApiController]
-    [Route("api/apps/v0/")]
-    public class AppsV0Controller : Controller
+    public class AppsController : ApiControllerBase
     {
         [HttpGet]
         public IEnumerable<Item> GetAsync()
