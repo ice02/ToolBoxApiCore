@@ -42,7 +42,23 @@ namespace ToolBoxApiCore
                 o.AssumeDefaultVersionWhenUnspecified = true; // assume that the caller wants the default version if they don't specify
                 o.ApiVersionReader = new MediaTypeApiVersionReader(); // read the version number from the accept header
             });
+            //.AddMvcCore()
+            //.AddVersionedApiExplorer(options =>
+            //{
+            //    options.GroupNameFormat = "VVV";
+            //    options.SubstituteApiVersionInUrl = true;
+            //});
 
+            //services.AddSwaggerDocument(document =>
+            //    {
+            //        document.DocumentName = "v0";
+            //        document.ApiGroupNames = new[] { "0.1" };
+            //    })
+            //    .AddSwaggerDocument(document =>
+            //    {
+            //        document.DocumentName = "v1";
+            //        document.ApiGroupNames = new[] { "1.0" };
+            //    });
             services.AddSwaggerDocument();
         }
 
@@ -63,25 +79,12 @@ namespace ToolBoxApiCore
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            
 
-            // Middleware  
-            if (env.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUi3(
-            //        config =>
-            //{
-            //    config.SwaggerRoutes.Add("/swagger/v1/swagger.json");
-            //    config.TransformToExternalPath = (internalUiRoute, request) =>
-            //    {
-            //        // The header X-External-Path is set in the nginx.conf file
-            //        var externalPath = request.Headers.ContainsKey("X-External-Path") ? request.Headers["X-External-Path"].First() : "";
-            //        return externalPath + internalUiRoute;
-            //    };
-            //}
-            );
-            }
+
+            app.UseSwagger();
+            app.UseSwaggerUi3();
+
+            //app.UseReDoc();
         }
     }
 }

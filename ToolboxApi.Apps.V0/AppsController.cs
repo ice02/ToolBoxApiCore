@@ -9,7 +9,7 @@ namespace ToolboxApi.Apps.V0
     [ApiVersion("0.1")]
     [Produces("application/json")]
     [ApiController]
-    public class AppsController : ApiControllerBase
+    public class AppsV0Controller : ApiControllerBase
     {
         [HttpGet]
         public IEnumerable<Item> GetAsync()
