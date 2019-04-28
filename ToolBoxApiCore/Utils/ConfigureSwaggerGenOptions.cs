@@ -53,10 +53,12 @@ namespace ToolBoxApiCore.Utils
             {
                 settings.Info.Version = description.ApiVersion.ToString();
 
-                if (description.IsDeprecated)
-                {
-                    settings.Info.Description += " - DEPRECATED";
-                }
+                // TODO : Bug here, value is ok in object settings.Info.Description but always first value in screen
+                // i think info can be set only one time for all versions
+                //if (description.IsDeprecated)
+                //{
+                //    settings.Info.Description += " - DEPRECATED";
+                //}
 
                 options.SwaggerDoc(description.GroupName, settings.Info);
             }

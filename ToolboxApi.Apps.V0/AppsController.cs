@@ -6,7 +6,7 @@ using ToolboxApi.Common;
 
 namespace ToolboxApi.Apps.V0
 {
-    [ApiVersion("0.1")]
+    [ApiVersion("0.1", Deprecated = true)]
     [Produces("application/json")]
     [ApiController]
     public class AppsController : ApiControllerBase
