@@ -42,42 +42,20 @@ namespace ToolBoxApiCore
         /// <param name="services">IServiceCollection</param>
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddExtCore(this.extensionsPath, true);
+            services
+                .AddExtCore(this.extensionsPath, true);
 
-            services.Configure<SwaggerSettings>(Configuration.GetSection(nameof(SwaggerSettings)));
+            services
+                .Configure<SwaggerSettings>(Configuration.GetSection(nameof(SwaggerSettings)));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            //services.AddApiVersioning(o =>
-            //{
-            //    o.DefaultApiVersion = new ApiVersion(1, 0); // specify the default api version
-            //    o.AssumeDefaultVersionWhenUnspecified = true; // assume that the caller wants the default version if they don't specify
-            //    o.ApiVersionReader = new MediaTypeApiVersionReader(); // read the version number from the accept header
-            //});
+            services
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services
                 .AddApiVersionWithExplorer()
                 .AddSwaggerOptions()
                 .AddSwaggerGen();
-
-            //.AddMvcCore()
-            //.AddVersionedApiExplorer(options =>
-            //{
-            //    options.GroupNameFormat = "VVV";
-            //    options.SubstituteApiVersionInUrl = true;
-            //});
-
-            //services.AddSwaggerDocument(document =>
-            //    {
-            //        document.DocumentName = "v0";
-            //        document.ApiGroupNames = new[] { "0.1" };
-            //    })
-            //    .AddSwaggerDocument(document =>
-            //    {
-            //        document.DocumentName = "v1";
-            //        document.ApiGroupNames = new[] { "1.0" };
-            //    });
-            //services.AddSwaggerDocument();
         }
 
         /// <summary>
@@ -116,69 +94,6 @@ namespace ToolBoxApiCore
             });
 
             app.UseMvc();
-
-            
-
-            //app.UseSwagger();
-            //app.UseSwaggerUi3();
-            //app.UseReDoc();
-        }
-    }
-
-    public sealed class ConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
-    {
-        private readonly IApiVersionDescriptionProvider provider;
-        private readonly SwaggerSettings settings;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigureSwaggerGenOptions"/> class.
-        /// </summary>
-        /// <param name="versionDescriptionProvider">IApiVersionDescriptionProvider</param>
-        /// <param name="swaggerSettings">App Settings for Swagger</param>
-        public ConfigureSwaggerGenOptions(IApiVersionDescriptionProvider versionDescriptionProvider,
-                                          IOptions<SwaggerSettings> swaggerSettings)
-        {
-            Debug.Assert(versionDescriptionProvider != null, $"{nameof(versionDescriptionProvider)} != null");
-            Debug.Assert(swaggerSettings != null, $"{nameof(swaggerSettings)} != null");
-
-            this.provider = versionDescriptionProvider;
-            this.settings = swaggerSettings.Value ?? new SwaggerSettings();
-        }
-
-        /// <inheritdoc />
-        public void Configure(SwaggerGenOptions options)
-        {
-            //options.DocumentFilter<YamlDocumentFilter>();
-            //options.OperationFilter<SwaggerDefaultValues>();
-
-            options.DescribeAllEnumsAsStrings();
-            options.IgnoreObsoleteActions();
-            options.IgnoreObsoleteProperties();
-
-            AddSwaggerDocumentForEachDiscoveredApiVersion(options);
-            //SetCommentsPathForSwaggerJsonAndUi(options);
-        }
-
-        private void AddSwaggerDocumentForEachDiscoveredApiVersion(SwaggerGenOptions options)
-        {
-            foreach (var description in provider.ApiVersionDescriptions)
-            {
-                settings.Info.Version = description.ApiVersion.ToString();
-
-                if (description.IsDeprecated)
-                {
-                    settings.Info.Description += " - DEPRECATED";
-                }
-
-                options.SwaggerDoc(description.GroupName, settings.Info);
-            }
-        }
-
-        private static void SetCommentsPathForSwaggerJsonAndUi(SwaggerGenOptions options)
-        {
-            //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //options.IncludeXmlComments(xmlPath);
         }
     }
 }

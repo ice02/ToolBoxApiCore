@@ -18,16 +18,6 @@
             <param name="env">IHostingEnvironment</param>
             <param name="provider">Inject temporary IApiVersionDescriptionProvider</param>
         </member>
-        <member name="M:ToolBoxApiCore.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{ToolBoxApiCore.Utils.SwaggerSettings})">
-            <summary>
-            Initializes a new instance of the <see cref="T:ToolBoxApiCore.ConfigureSwaggerGenOptions"/> class.
-            </summary>
-            <param name="versionDescriptionProvider">IApiVersionDescriptionProvider</param>
-            <param name="swaggerSettings">App Settings for Swagger</param>
-        </member>
-        <member name="M:ToolBoxApiCore.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
-            <inheritdoc />
-        </member>
         <member name="T:ToolBoxApiCore.Utils.ConfigureSwaggerGenOptions">
             <inheritdoc />
             <summary>

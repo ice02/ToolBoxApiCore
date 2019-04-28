@@ -6,6 +6,9 @@ namespace ToolboxApi.Apps.V1.Model
 {
     public class Item
     {
+        public int Att1 { get; set; }
+        public string Att2 { get; set; }
+
         private string v1;
         private int v2;
 

@@ -12,12 +12,12 @@ namespace ToolBoxApiCore.Utils
         /// </summary>
         public SwaggerSettings()
         {
-            Name = "REST API Example";
+            Name = "API Whiteapp";
             Info = new Info
             {
-                Title = "REST API Example",
-                Description = "REST API Versions",
-                TermsOfService = "Please contact your service provider"
+                Title = "API Whiteapp",
+                Description = "API whiteapp with versions",
+                TermsOfService = ""
             };
         }
 
