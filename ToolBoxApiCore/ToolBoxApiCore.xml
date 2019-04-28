@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToolBoxApiCore</name>
+    </assembly>
+    <members>
+        <member name="M:ToolBoxApiCore.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">IServiceCollection</param>
+        </member>
+        <member name="M:ToolBoxApiCore.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IHostingEnvironment</param>
+            <param name="provider">Inject temporary IApiVersionDescriptionProvider</param>
+        </member>
+        <member name="M:ToolBoxApiCore.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{ToolBoxApiCore.Utils.SwaggerSettings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToolBoxApiCore.ConfigureSwaggerGenOptions"/> class.
+            </summary>
+            <param name="versionDescriptionProvider">IApiVersionDescriptionProvider</param>
+            <param name="swaggerSettings">App Settings for Swagger</param>
+        </member>
+        <member name="M:ToolBoxApiCore.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.ConfigureSwaggerGenOptions">
+            <inheritdoc />
+            <summary>
+            Implementation of IConfigureOptions&lt;SwaggerGenOptions&gt;
+            </summary>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{ToolBoxApiCore.Utils.SwaggerSettings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToolBoxApiCore.Utils.ConfigureSwaggerGenOptions"/> class.
+            </summary>
+            <param name="versionDescriptionProvider">IApiVersionDescriptionProvider</param>
+            <param name="swaggerSettings">App Settings for Swagger</param>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.ConfigureSwaggerOptions">
+            <inheritdoc />
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerOptions.#ctor(Microsoft.Extensions.Options.IOptions{ToolBoxApiCore.Utils.SwaggerSettings})">
+            <inheritdoc />
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.Swagger.SwaggerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.ConfigureSwaggerUiOptions">
+            <inheritdoc cref="T:Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions"/>>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerUiOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{ToolBoxApiCore.Utils.SwaggerSettings})">
+            <inheritdoc />
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ConfigureSwaggerUiOptions.Configure(Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions)">
+            <summary>
+            Configure
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.MiddlewareExtensions">
+            <summary>
+            Extending Swagger services
+            </summary>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.MiddlewareExtensions.UseSwaggerDocuments(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enabling Swagger UI.
+            Excluding from test environment
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.ServicesExtensions">
+            <summary>
+            Service Collection(IServiceCollection) Extensions
+            </summary>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ServicesExtensions.AddApiVersionWithExplorer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add AddVersionedApiExplorer and AddApiVersioning middlewares
+            </summary>
+            <param name="services"></param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.ServicesExtensions.AddSwaggerOptions(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger services
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>/></param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.SwaggerDefaultValues">
+            <summary>
+            Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
+            </summary>
+            <remarks>This <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/> is only required due to bugs in the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator"/>.
+            Once they are fixed and published, this class can be removed.</remarks>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.SwaggerDefaultValues.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.SwaggerSettings">
+            <summary>
+            Swagger Configuration
+            </summary>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.SwaggerSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToolBoxApiCore.Utils.SwaggerSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:ToolBoxApiCore.Utils.SwaggerSettings.Name">
+            <summary>
+            Gets or sets document Name.
+            </summary>
+        </member>
+        <member name="P:ToolBoxApiCore.Utils.SwaggerSettings.Info">
+            <summary>
+            Gets or sets swagger Info.
+            </summary>
+        </member>
+        <member name="P:ToolBoxApiCore.Utils.SwaggerSettings.RoutePrefix">
+            <summary>
+            Gets or sets RoutePrefix.
+            </summary>
+        </member>
+        <member name="P:ToolBoxApiCore.Utils.SwaggerSettings.RoutePrefixWithSlash">
+            <summary>
+            Gets Route Prefix with tailing slash.
+            </summary>
+        </member>
+        <member name="T:ToolBoxApiCore.Utils.YamlDocumentFilter">
+            <summary>
+            To use YAML serializer to generate YAML
+            </summary>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.YamlDocumentFilter.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToolBoxApiCore.Utils.YamlDocumentFilter"/> class.
+            </summary>
+            <param name="hostingEnvironment">IHostingEnvironment</param>
+        </member>
+        <member name="M:ToolBoxApiCore.Utils.YamlDocumentFilter.Apply(Swashbuckle.AspNetCore.Swagger.SwaggerDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Apply YAML Serializer
+            </summary>
+            <param name="swaggerDoc">SwaggerDocument</param>
+            <param name="context">DocumentFilterContext</param>
+        </member>
+    </members>
+</doc>
